@@ -1,0 +1,23 @@
+{
+    "name": "kipawa/isp",
+    "description": "an app for hotspot and pppoe clients using radius and mikrotik api",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "cycle/annotated": "4.x-dev",
+        "smarty/smarty": "^5.4"
+    },
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Kipawa\\Isp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nwachira",
+            "email": "nwachira@unganishanetworks.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

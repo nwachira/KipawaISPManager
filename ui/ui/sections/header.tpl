@@ -38,7 +38,16 @@
   <!-- CSS Files -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+
+
+  <link rel="stylesheet" href="ui/ui/styles/select2.min.css" />
+    <link rel="stylesheet" href="ui/ui/styles/select2-bootstrap.min.css" />
+    <link rel="stylesheet" href="ui/ui/styles/sweetalert2.min.css" />
+    <link rel="stylesheet" href="ui/ui/styles/plugins/pace.css" />
+    <link rel="stylesheet" href="ui/ui/summernote/summernote.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-67gI5dM0d4Y8Qy3vD2xVf7R0gI4mO2qJ61S1sZj3mF4hW7rGzY0L8E3sN4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -1,4 +1,5 @@
 <?php
+register_menu("Hotspot Settings", true, "hotspot_settings", 'AFTER_SETTINGS', 'ion ion-earth');
 
 function hotspot_settings()
 {
@@ -135,19 +136,19 @@ function hotspot_settings_download()
 
     $htmlContent .= "<body class=\"font-sans antialiased text-gray-900\">\n";
     $htmlContent .= "    <!-- Sticky Header -->\n";
-    $htmlContent .= "    <header class=\"bg-white text-slate-600 fixed w-full z-10\">\n";
+    $htmlContent .= "    <header class=\"bg-green-600 text-white fixed w-full z-10\">\n";
     $htmlContent .= "        <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5\">\n";
     $htmlContent .= "            <div class=\"flex items-center justify-between h-16\">\n";
     $htmlContent .= "                <!-- Logo and title area -->\n";
     $htmlContent .= "                <div class=\"flex items-center\">\n";
-    $htmlContent .= "                    <img src=\"logo.png\" alt=\"Logo\" class=\"h-8 w-8 mr-2\">\n";
-    $htmlContent .= "                    <h3 class=\"text-xl font-bold\">" . htmlspecialchars($hotspotTitle);
-
-    $htmlContent .= "                        <span class=\"block\text-sm\" . htmlspecialchars($phone) . </span>\n";
-
+    $htmlContent .= "                    <img src=\"logo.png\" alt=\"Your Company Logo\" class=\"h-8 w-8 mr-2\">\n";
+    $htmlContent .= "                    <h1 class=\"text-xl font-bold\">" . htmlspecialchars($hotspotTitle) . " Hotspot Login Page</h1>\n";
     $htmlContent .= "                </div>\n";
     $htmlContent .= "                <!-- Navigation Links -->\n";
     $htmlContent .= "                <div class=\"block\">\n";
+    $htmlContent .= "                    <div class=\"ml-10 flex items-baseline space-x-4\">\n";
+    $htmlContent .= "                        <a href=\"#\" class=\"text-teal-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium\">Already Have an Account? Login</a>\n";
+    $htmlContent .= "                    </div>\n";
     $htmlContent .= "                </div>\n";
     $htmlContent .= "            </div>\n";
     $htmlContent .= "        </div>\n";
@@ -162,10 +163,12 @@ function hotspot_settings_download()
     $htmlContent .= "                <!-- Pricing Section -->\n";
     $htmlContent .= "                <div class=\"mt-10\">\n";
     $htmlContent .= "                    <div class=\"text-center\">\n";
-    $htmlContent .= "                        <h6 class=\"text-2xl leading-8 font-bold tracking-tight text-gray-900 sm:text-2xl sm:leading-9\">\n";
+    $htmlContent .= "                        <h3 class=\"text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9\">\n";
     $htmlContent .= "                            CHECK OUR PRICING\n";
-    $htmlContent .= "                        </h6>\n";
-   
+    $htmlContent .= "                        </h3>\n";
+    $htmlContent .= "                        <p class=\"mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto\">\n";
+    $htmlContent .= "                            Choose the plan that fits your needs.\n";
+    $htmlContent .= "                        </p>\n";
     $htmlContent .= "                    </div>\n";
     $htmlContent .= "                </div>\n";
     $htmlContent .= "            </div>\n";
@@ -185,7 +188,7 @@ function hotspot_settings_download()
         $htmlContent .= "            <div class=\"flex-1 text-center sm:text-left\">\n";
         $htmlContent .= "                <a href=\"#\" class=\"bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-lg shadow-md transition duration-300 ease-in-out\"\n";
         $htmlContent .= "                   onclick=\"handlePhoneNumberSubmission(this.getAttribute('data-plan-id'), this.getAttribute('data-router-id')); return false;\" data-plan-id=\"" . $plan['id'] . "\" data-router-id=\"" . $routerId . "\">\n";
-        $htmlContent .= "                    Buy\n";
+        $htmlContent .= "                    Buy Now\n";
         $htmlContent .= "                </a>\n";
         $htmlContent .= "            </div>\n";
         $htmlContent .= "        </div>\n";
@@ -195,6 +198,10 @@ function hotspot_settings_download()
     
     $htmlContent .= "</div>\n";
     
+    
+
+
+
     // Glider.js script for the Testimonials Section
     $htmlContent .= "<script>\n";
     $htmlContent .= "    new Glider(document.querySelector('.glider'), {\n";
@@ -228,6 +235,40 @@ function hotspot_settings_download()
 
 
 
+    $htmlContent .= "<!-- FAQ Section -->\n";
+    $htmlContent .= "<div class=\"mt-10 mx-auto px-4 sm:px-6 lg:px-8\">\n";
+    $htmlContent .= "    <div class=\"text-center\">\n";
+    $htmlContent .= "        <h3 class=\"text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9\">\n";
+    $htmlContent .= "        FREQUENTLY ASKED QUESTIONS\n";
+    $htmlContent .= "        </h3>\n";
+    $htmlContent .= "        <p class=\"mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto\">\n";
+    $htmlContent .= "            Everything you need to know before getting started.\n";
+    $htmlContent .= "        </p>\n";
+    $htmlContent .= "    </div>\n";
+    $htmlContent .= "    <div class=\"mt-6\">\n";
+    $htmlContent .= "        <dl class=\"space-y-6\">\n";
+
+    // FAQ 1
+    $htmlContent .= "            <div class=\"bg-white rounded-lg shadow-md\">\n";
+    $htmlContent .= "                <dt class=\"p-4 cursor-pointer text-lg leading-6 font-medium text-gray-900\" onclick=\"toggleFAQ('faq1')\">" . htmlspecialchars($settings['frequently_asked_questions_headline1']) . "</dt>\n";
+    $htmlContent .= "                <dd id=\"faq1\" class=\"p-4 hidden text-base text-gray-500\">" . htmlspecialchars($settings['frequently_asked_questions_answer1']) . "</dd>\n";
+    $htmlContent .= "            </div>\n";
+
+    // FAQ 2
+    $htmlContent .= "            <div class=\"bg-white rounded-lg shadow-md\">\n";
+    $htmlContent .= "                <dt class=\"p-4 cursor-pointer text-lg leading-6 font-medium text-gray-900\" onclick=\"toggleFAQ('faq2')\">" . htmlspecialchars($settings['frequently_asked_questions_headline2']) . "</dt>\n";
+    $htmlContent .= "                <dd id=\"faq2\" class=\"p-4 hidden text-base text-gray-500\">" . htmlspecialchars($settings['frequently_asked_questions_answer2']) . "</dd>\n";
+    $htmlContent .= "            </div>\n";
+
+    // FAQ 3
+    $htmlContent .= "            <div class=\"bg-white rounded-lg shadow-md\">\n";
+    $htmlContent .= "                <dt class=\"p-4 cursor-pointer text-lg leading-6 font-medium text-gray-900\" onclick=\"toggleFAQ('faq3')\">" . htmlspecialchars($settings['frequently_asked_questions_headline3']) . "</dt>\n";
+    $htmlContent .= "                <dd id=\"faq3\" class=\"p-4 hidden text-base text-gray-500\">" . htmlspecialchars($settings['frequently_asked_questions_answer3']) . "</dd>\n";
+    $htmlContent .= "            </div>\n";
+
+    $htmlContent .= "        </dl>\n";
+    $htmlContent .= "    </div>\n";
+    $htmlContent .= "</div>\n";
 
     $htmlContent .= "<br>\n";
     $htmlContent .= "<br>\n";
@@ -350,6 +391,12 @@ function hotspot_settings_download()
     $htmlContent .= "        </div>\n";
 
     $htmlContent .= "        <div class=\"mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between\">\n";
+    $htmlContent .= "            <div class=\"flex space-x-6 md:order-2\">\n";
+    $htmlContent .= "                <a href=\"#\" class=\"text-gray-400 hover:text-gray-300\"><span class=\"sr-only\">Facebook</span><i class=\"fab fa-facebook-f\"></i></a>\n";
+    $htmlContent .= "                <a href=\"#\" class=\"text-gray-400 hover:text-gray-300\"><span class=\"sr-only\">Instagram</span><i class=\"fab fa-instagram\"></i></a>\n";
+    $htmlContent .= "                <a href=\"#\" class=\"text-gray-400 hover:text-gray-300\"><span class=\"sr-only\">Twitter</span><i class=\"fab fa-twitter\"></i></a>\n";
+    $htmlContent .= "                <a href=\"#\" class=\"text-gray-400 hover:text-gray-300\"><span class=\"sr-only\">LinkedIn</span><i class=\"fab fa-linkedin-in\"></i></a>\n";
+    $htmlContent .= "            </div>\n";
     $htmlContent .= "<p class=\"mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1\">\n";
     $htmlContent .= "                &copy; 2024 " . htmlspecialchars($company) . " All rights reserved.\n";
     $htmlContent .= "            </p>\n";
@@ -383,8 +430,8 @@ function hotspot_settings_download()
     $htmlContent .= "                autocapitalize: 'off'\n";
     $htmlContent .= "            },\n";
     $htmlContent .= "            showCancelButton: true,\n";
-    $htmlContent .= "            confirmButtonColor: '#4CAF50',\n";  // Green for the submit button
-    $htmlContent .= "            cancelButtonColor: '#f44336',\n";  // Red for the cancel button
+    $htmlContent .= "            confirmButtonColor: '#3085d6',\n";
+    $htmlContent .= "            cancelButtonColor: '#d33',\n";
     $htmlContent .= "            confirmButtonText: 'Submit',\n";
     $htmlContent .= "            showLoaderOnConfirm: true,\n";
     

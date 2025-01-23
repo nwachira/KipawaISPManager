@@ -104,6 +104,23 @@
                 padding: 8px 16px;
             }
         }
+
+        .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-left-color: #28a745;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
     </style>
 </head>
 
@@ -144,14 +161,15 @@
                 <div class="ball"></div>
                 <div class="ball"></div>
             </div>
-            <h1>Please wait while your transaction is proccessing</h1>
+           <div class="thank-you-container">
+    <div class="spinner"></div>
+    <h1>Please wait while your transaction is processing. Do not leave this page.</h1>
+</div>
+
         </div>
         <br>
         <div class="login-box-body">
-            <center>
-                <div class="countdown-timer" id="countdown">Page will refresh in 5 seconds...</div>
-            </center>
-            <br>
+           
             <div class="box-body">
                 <a href="#" class="btn btn-block btn-success btn-flat" onclick="location.reload();">{Lang::T('Refresh')}</a>
             </div>

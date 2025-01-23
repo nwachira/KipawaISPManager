@@ -383,8 +383,8 @@ function hotspot_settings_download()
     $htmlContent .= "                autocapitalize: 'off'\n";
     $htmlContent .= "            },\n";
     $htmlContent .= "            showCancelButton: true,\n";
-    $htmlContent .= "            confirmButtonColor: '#3085d6',\n";
-    $htmlContent .= "            cancelButtonColor: '#d33',\n";
+    $htmlContent .= "            confirmButtonColor: '#4CAF50',\n";  // Green for the submit button
+    $htmlContent .= "            cancelButtonColor: '#f44336',\n";  // Red for the cancel button
     $htmlContent .= "            confirmButtonText: 'Submit',\n";
     $htmlContent .= "            showLoaderOnConfirm: true,\n";
     

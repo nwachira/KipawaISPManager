@@ -12,179 +12,183 @@
       href="ui/ui/images/logo.png"
       type="image/x-icon"
     />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-      body {
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
-      }
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+  }
 
-      .container {
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        max-width: 500px;
-        width: 90%;
-      }
+  .container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
 
-      .company-name {
-        font-size: 24px;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 20px;
-      }
+  .company-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: #6a11cb;
+    margin-bottom: 10px;
+  }
 
-      .illustration {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 20px;
-        border-radius: 10px;
-      }
+  .illustration {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 20px;
+  }
 
-      h1 {
-        color: #333;
-        font-size: 28px;
-        margin-bottom: 20px;
-      }
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+  }
 
-      p {
-        color: #666;
-        font-size: 18px;
-        margin-bottom: 30px;
-      }
+  p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+  }
 
-      .form-group {
-        margin-bottom: 20px;
-        text-align: left;
-      }
+  .form-group {
+    margin-bottom: 25px;
+    text-align: left;
+  }
 
-      .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
+  .form-group label {
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+  }
 
-      .form-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
 
-      .form-group input:focus {
-        outline: none;
-        border-color: #9b59b6;
-      }
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.3);
+  }
 
-      .form-group select,
-      .form-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
+  .pay-button {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 15px 0;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
 
-      .form-group input:focus,
-      .form-group select:focus {
-        outline: none;
-        border-color: #9b59b6;
-      }
+  .pay-button:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+  }
 
-      .pay-button {
-        background-color: #e74c3c;
-        color: #fff;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 30px;
-        font-size: 18px;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.3s ease;
-        cursor: pointer;
-      }
+  .account-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
 
-      .pay-button:hover {
-        background-color: #c0392b;
-      }
+  .account-table th,
+  .account-table td {
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+  }
 
-      .loading-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.7);
-        z-index: 9999;
-        display: none;
-        justify-content: center;
-        align-items: center;
-      }
+  .account-table th {
+    background: #f4f4f4;
+    font-weight: 600;
+    text-align: left;
+  }
 
-      .loading-overlay .spinner {
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid #3498db;
-        width: 120px;
-        height: 120px;
-        animation: spin 2s linear infinite;
-      }
+  .flex-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
 
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
+  .flex-container input {
+    flex: 1;
+  }
 
-        100% {
-          transform: rotate(360deg);
-        }
-      }
+  .flex-container button {
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6a11cb;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
 
-      .account-table {
-        width: 100%;
-        margin-top: 30px;
-        border-collapse: collapse;
-      }
+  .flex-container button:hover {
+    background-color: #2575fc;
+  }
 
-      .account-table th,
-      .account-table td {
-        border: 1px solid #ccc;
-        padding: 12px;
-        text-align: left;
-      }
+  .hidden {
+    display: none;
+  }
 
-      .account-table th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-      }
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
 
-      .flex-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+  .loading-overlay .spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+  }
 
-      .flex-container input {
-        flex: 1;
-      }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
 
-      .flex-container button {
-        padding: 10px 15px;
-      }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
 
-      .hidden {
-        display: none;
-      }
-    </style>
   </head>
 
   <body>

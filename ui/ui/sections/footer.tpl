@@ -39,7 +39,18 @@
   <script src="ui/ui/scripts/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="ui/ui/scripts/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="ui/ui/scripts/js/plugins/chartjs.min.js"></script>
+
+  <script src="ui/ui/scripts/plugins/select2.min.js"></script>
+<script src="ui/ui/scripts/pace.min.js"></script>
+<script src="ui/ui/summernote/summernote.min.js"></script>
+<script src="ui/ui/scripts/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
@@ -55,6 +66,31 @@
     }
   </script>
 
+<script>
+    document.getElementById('openSearch').addEventListener('click', function () {
+        document.getElementById('searchOverlay').style.display = 'flex';
+    });
+
+    document.getElementById('closeSearch').addEventListener('click', function () {
+        document.getElementById('searchOverlay').style.display = 'none';
+    });
+
+    document.getElementById('searchTerm').addEventListener('keyup', function () {
+        let query = this.value;
+        $.ajax({
+            url: '{$_url}search_user',
+            type: 'GET',
+            data: { query: query },
+            success: function (data) {
+                if (data.trim() !== '') {
+                    $('#searchResults').html(data).show();
+                } else {
+                    $('#searchResults').html('').hide();
+                }
+            }
+        });
+    });
+</script>
 
 
 {literal}

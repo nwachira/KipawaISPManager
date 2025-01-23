@@ -21,3 +21,4 @@ docker-compose.yml
 docs/**
 !docs/*.html
 !docs/*.md
+back.log
